@@ -1,1 +1,2 @@
-web: gunicorn app:app --timeout 1000
+python -c 'import stanza;stanza.download('en')'
+web: python app.py
