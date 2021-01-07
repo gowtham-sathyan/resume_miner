@@ -1,6 +1,8 @@
 from pdfminer.high_level import extract_text
 import re
 import stanza
+stanza.download('en')
+# nlp = stanza.Pipeline('en')
 def extract(filename):
 	nlp = stanza.Pipeline('en')
 	pdf_text=extract_text(filename)

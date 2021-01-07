@@ -2,13 +2,9 @@ from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS, cross_origin
 import requests
 import os
-from pdfminer.high_level import extract_text
 import re
-import stanza
 import time
 from extract_text import extract
-stanza.download('en')
-nlp = stanza.Pipeline('en')
 app = Flask(__name__)
 cors = CORS(app)
 
