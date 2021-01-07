@@ -4,9 +4,7 @@ import requests
 import os
 import re
 import time
-import stanza
-from extract_text import extract
-# stanza.download('en')
+from extract_text import extraction
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -16,10 +14,11 @@ def get_results():
 	f=request.files['file']
 	filename=str(time.time())+".pdf"
 	f.save(filename)
-	payload=extract(filename)
+	payload=pdf_extractor.extract(filename)
 	# pdf_text=extract_text(filename)
 	return(jsonify(payload))
 
+pdf_extractor=extraction()
 if __name__=='__main__':
 	# app.run(host='0.0.0.0',port=5000,debug=True)
 	app.run(debug=True)
