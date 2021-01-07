@@ -11,7 +11,6 @@ class extraction:
 		pdf_text=extract_text(filename)
 		text_1=re.sub("\s\s\s+" , "\n", pdf_text)
 		text_1=text_1.split("\n")
-		del pdf_text
 		text=[]
 		i=0
 		while i<len(text_1):
@@ -31,9 +30,6 @@ class extraction:
 					else:
 						j+=text_1[i+1].strip()
 						i+=1
-		# t_list=["gpe", "org"]
-		# skipped=[]
-		del text_1
 		result=set()
 		org_flag=0
 		loc_flag=0
@@ -96,7 +92,6 @@ class extraction:
 			if date_flag!=1 and wanted_flag==1:
 				if unwanted_counter<=3:
 					result.add(i)
-		del nlp
 		result_dict={}
 		for i in result:
 			try:
@@ -115,8 +110,6 @@ class extraction:
 						except:
 							result_dict[j]=[i]
 						break
-		del text
-		del result
 		payload={"result":[]}
 		for i in sorted(result_dict.keys()):
 			for j in result_dict[i]:
