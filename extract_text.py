@@ -1,4 +1,5 @@
 from pdfminer.high_level import extract_text
+import re
 import stanza
 def extract(filename):
 	nlp = stanza.Pipeline('en',processors='tokenize,ner,pos')
