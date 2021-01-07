@@ -4,6 +4,7 @@ import requests
 import os
 import re
 import time
+import stanza
 from extract_text import extract
 stanza.download('en')
 app = Flask(__name__)
