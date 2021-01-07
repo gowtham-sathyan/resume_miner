@@ -1,10 +1,9 @@
 from pdfminer.high_level import extract_text
 import re
 import stanza
-stanza.download('en')
 # nlp = stanza.Pipeline('en')
 def extract(filename):
-	nlp = stanza.Pipeline('en')
+	nlp = stanza.Pipeline('en',processors='tokenize,ner,pos')
 	pdf_text=extract_text(filename)
 	text_1=re.sub("\s\s\s+" , "\n", pdf_text)
 	text_1=text_1.split("\n")

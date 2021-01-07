@@ -5,6 +5,7 @@ import os
 import re
 import time
 from extract_text import extract
+stanza.download('en')
 app = Flask(__name__)
 cors = CORS(app)
 
