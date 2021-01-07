@@ -6,6 +6,6 @@ Jinja2==2.11.1
 MarkupSafe==1.1.1
 six==1.14.0
 Werkzeug==1.0.0
-http://download.pytorch.org/whl/cpu/torch-1.4.0%2Bcpu-cp37-cp37m-linux_x86_64.whl
+http://download.pytorch.org/whl/cpu/torch-1.4.0%2Bcpu-cp36-cp36m-linux_x86_64.whl
 stanza==1.1.1
 pdfminer.six==20191110
